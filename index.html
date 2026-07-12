@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charlemagne | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Social and Fitness Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,14 +15,15 @@
     <!-- Header / Navigation -->
     <header>
         <div class="logo">
-            <i class="fa-solid fa-dumbbell plate-icon"></i> Charlemagne
+            <i class="fa-solid fa-laptop laptop-icon"></i> Charlemagne
         </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#projects">Web Projects</a></li>
                 <li><a href="#videos">Videos</a></li>
+                <li><a href="#creatives">Creatives</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -61,24 +63,60 @@
     <section id="skills" class="skills">
         <h2>My Skills</h2>
         <div class="skills-container">
-            <div class="skill-card"><i class="fa-brands fa-html5"></i> <h3>HTML5</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-css3-alt"></i> <h3>CSS3</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-video"></i> <h3>Video Editing</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-palette"></i> <h3>Canva</h3></div>
-            <div class="skill-card"><i class="fa-regular fa-file-word"></i> <h3>MS Word</h3></div>
-            <div class="skill-card"><i class="fa-regular fa-file-excel"></i> <h3>MS Excel</h3></div>
+
+            <a href="#projects" class="skill-card-link" onclick="highlightCard()">
+                <div class="skill-card"><i class="fa-brands fa-html5"></i> <h3>HTML5</h3></div>
+            </a>
+            <a href="#projects" class="skill-card-link" onclick="highlightCard()">
+                <div class="skill-card"><i class="fa-brands fa-css3-alt"></i> <h3>CSS3</h3></div>
+            </a>
+
+            <a href="#videos" class="skill-card-link" onclick="highlightVideo()">
+                <div class="skill-card"><i class="fa-solid fa-video"></i> <h3>Video Editing</h3></div>
+            </a>
+
+            <a href="#creatives" class="skill-card-link" onclick="highlightCanva()">
+                <div class="skill-card"><i class="fa-solid fa-palette"></i> <h3>Canva</h3></div>
+            </a>
+
+            <a href="#creatives" class="skill-card-link" onclick="highlightWord()">
+                <div class="skill-card"><i class="fa-regular fa-file-word"></i> <h3>MS Word</h3></div>
+            </a>
+
+            <a href="#creatives" class="skill-card-link" onclick="highlightExcel()">
+                <div class="skill-card"><i class="fa-regular fa-file-excel"></i> <h3>MS Excel</h3></div>
+            </a>
+
         </div>
     </section>
 
     <!-- Web Projects Section -->
     <section id="projects" class="projects">
-        <h2>Web Portal</h2>
+        <h2>Web Portals</h2>
         <div class="project-grid">
-            <div class="project-card">
-                <h3>Live Web Project</h3>
-                <p>A responsive website built using HTML and CSS.</p>
-                <a href="https://charlemagneelias22-design.github.io/Gym-Kharle/" target="_blank" class="project-link">Visit Site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            
+            <div class="project-card" id="web-portal-card">
+                <div class="project-thumbnail">
+                    <img src="Pictures/GymKharle.png" alt="Gym Kharle Preview">
+                </div>
+                <div class="project-card-content">
+                    <h3>Gym Kharle</h3>
+                    <p>A responsive gym website built using HTML and CSS.</p>
+                    <a href="https://charlemagneelias22-design.github.io/Gym-Kharle/" target="_blank" class="project-link">Visit Site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
             </div>
+
+            <div class="project-card" id="gym-tracker-card">
+                <div class="project-thumbnail">
+                    <img src="Pictures/GymTracker.png" alt="Project Preview">
+                </div>
+                <div class="project-card-content">
+                    <h3>Gym Tracker</h3>
+                    <p>A dynamic, local-first web application designed to log exercises, track physical vitals, and monitor personal fitness milestones.</p>
+                    <a href="https://charlemagneelias22-design.github.io/GymTracker/" target="_blank" class="project-link">Visit Site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -87,22 +125,150 @@
         <h2>Featured Videos</h2>
         <p>A glimpse into my video editing work and fitness journey.</p>
         <div class="video-grid">
-            <div class="video-card">
+            <div class="video-card" id="video-card-1">
                 <video controls>
-                    <source src="fitness-workout.mp4" type="video/mp4">
+                    <source src="Videos/Workout.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <h4>Fitness & Workout Edit</h4>
             </div>
-            <div class="video-card">
+            <div class="video-card" id="video-card-2">
                 <video controls>
-                    <source src="sample-edit.mp4" type="video/mp4">
+                    <source src="#" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <h4>Cinematic Video Project</h4>
+                <h4>Video Project</h4>
             </div>
         </div>
     </section>
+
+
+<!-- Design & Office Showcase Section -->
+<section id="creatives" class="creatives">
+    <h2>Design & Office Showcase</h2>
+    <p>A collection of my Canva graphic designs alongside document and data management projects.</p>
+    
+    <div class="project-grid">
+        
+        <!-- CANVA CARD (With Video) -->
+        <div class="project-card" id="canva-project-card">
+            <div class="project-thumbnail" style="background-color: #01161e;">
+                <video id="canva-video" autoplay loop muted playsinline>
+                    <source src="Videos/GymCanva.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="project-card-content">
+                <h3>Canva Graphic Design</h3>
+                <p>Motion graphics, branding visuals, and high-impact layouts designed using Canva.</p>
+                <!-- Click opens the Canva Preview Modal -->
+                <a href="javascript:void(0)" class="project-link" onclick="openModal('canva-modal')">View Design <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+
+        <!-- MS WORD CARD (With Picture and clean fallback) -->
+        <div class="project-card" id="word-project-card">
+            <div class="project-thumbnail">
+                <!-- Handles clean image fallback styling if file isn't loaded yet -->
+                <img src="Pictures/ms-word-preview.png" alt="MS Word Documentation Preview" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="placeholder-fallback" style="display: none;">
+                    <i class="fa-regular fa-file-word"></i>
+                    <span>Technical Doc Preview</span>
+                </div>
+            </div>
+            <div class="project-card-content">
+                <h3>Technical Documentation</h3>
+                <p>Professional formatting, system manuals, and structural engineering reports configured in MS Word.</p>
+                <!-- Click opens the MS Word Preview Modal -->
+                <a href="javascript:void(0)" class="project-link" onclick="openModal('word-modal')">View Document <i class="fa-solid fa-file-word"></i></a>
+            </div>
+        </div>
+
+        <!-- MS EXCEL CARD (With Picture and clean fallback) -->
+        <div class="project-card" id="excel-project-card">
+            <div class="project-thumbnail">
+                <img src="Pictures/ms-excel-preview.png" alt="MS Excel Data Preview" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="placeholder-fallback" style="display: none;">
+                    <i class="fa-regular fa-file-excel"></i>
+                    <span>Spreadsheet Dashboard</span>
+                </div>
+            </div>
+            <div class="project-card-content">
+                <h3>Data Analytics & Sheets</h3>
+                <p>Automated tracking logs, calculation models, and structured analytics dashboards built using MS Excel.</p>
+                <!-- Click opens the MS Excel Preview Modal -->
+                <a href="javascript:void(0)" class="project-link" onclick="openModal('excel-modal')">View Spreadsheet <i class="fa-solid fa-file-excel"></i></a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="canva-modal" class="modal-overlay" onclick="closeModalOnOuterClick(event, 'canva-modal')">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-palette"></i> Canva Graphic Project</h3>
+            <button class="modal-close-btn" onclick="closeModal('canva-modal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>This graphic design package focuses on dynamic layouts, branding animations, and clean color guides customized for the presentation.</p>
+            <div class="modal-preview-box">
+                <!-- Fallback elegant preview image or actual video -->
+                <video controls autoplay muted loop style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+                    <source src="Videos/GymCanva.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="modal-actions">
+            <button class="modal-btn modal-btn-secondary" onclick="closeModal('canva-modal')">Close</button>
+            <a href="https://canva.link/q135jjwfddfmk8v" target="_blank" class="modal-btn modal-btn-primary">Open in Canva <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: MS WORD PREVIEW -->
+<div id="word-modal" class="modal-overlay" onclick="closeModalOnOuterClick(event, 'word-modal')">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3><i class="fa-regular fa-file-word"></i> Technical Documentation</h3>
+            <button class="modal-close-btn" onclick="closeModal('word-modal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Explore my professionally formatted reports, complete with table of contents, automated styling blocks, and technical system schemas.</p>
+            <div class="modal-preview-box" style="display: flex; align-items: center; justify-content: center; background: #011d26;">
+                <i class="fa-regular fa-file-pdf" style="font-size: 4rem; color: #ff3e3e;"></i>
+                <span style="margin-left: 15px; font-size: 1.1rem; color: #00d2ff;">Engineering_Report.pdf</span>
+            </div>
+        </div>
+        <div class="modal-actions">
+            <button class="modal-btn modal-btn-secondary" onclick="closeModal('word-modal')">Close</button>
+            <a href="Documents/Technical-Doc.pdf" download class="modal-btn modal-btn-primary">Download PDF <i class="fa-solid fa-download"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: MS EXCEL PREVIEW -->
+<div id="excel-modal" class="modal-overlay" onclick="closeModalOnOuterClick(event, 'excel-modal')">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3><i class="fa-regular fa-file-excel"></i> Data Analytics Model</h3>
+            <button class="modal-close-btn" onclick="closeModal('excel-modal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>This automated calculation sheets package features PivotTables, conditional lookup rules, macro models, and diagnostic tracking analytics.</p>
+            <div class="modal-preview-box" style="display: flex; align-items: center; justify-content: center; background: #01241a;">
+                <i class="fa-regular fa-file-excel" style="font-size: 4rem; color: #107c41;"></i>
+                <span style="margin-left: 15px; font-size: 1.1rem; color: #00d2ff;">Tracker_Model.xlsx</span>
+            </div>
+        </div>
+        <div class="modal-actions">
+            <button class="modal-btn modal-btn-secondary" onclick="closeModal('excel-modal')">Close</button>
+            <a href="Documents/Tracker_Model.xlsx" download class="modal-btn modal-btn-primary">Download spreadsheet <i class="fa-solid fa-download"></i></a>
+        </div>
+    </div>
+</div>
+
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -122,6 +288,111 @@
     <footer>
         <p>&copy; 2026 Charlemagne. All Rights Reserved.</p>
     </footer>
+
+
+
+        <script>
+            // Handles HTML5 and CSS3 clicks (Glows Web Portals)
+            function highlightCard() {
+                const card1 = document.getElementById('web-portal-card');
+                const card2 = document.getElementById('gym-tracker-card');
+                
+                if(card1) card1.classList.remove('flash-glow');
+                if(card2) card2.classList.remove('flash-glow');
+                
+                setTimeout(() => {
+                    if(card1) card1.classList.add('flash-glow');
+                    if(card2) card2.classList.add('flash-glow');
+                }, 100);
+            }
+
+            // Handles Video Editing clicks (Glows Video Cards)
+            function highlightVideo() {
+                const vCard1 = document.getElementById('video-card-1');
+                const vCard2 = document.getElementById('video-card-2');
+                
+                if(vCard1) vCard1.classList.remove('flash-glow');
+                if(vCard2) vCard2.classList.remove('flash-glow');
+                
+                setTimeout(() => {
+                    if(vCard1) vCard1.classList.add('flash-glow');
+                    if(vCard2) vCard2.classList.add('flash-glow');
+                }, 100);
+            }
+
+            // Handles Canva click specifically (Glows only Canva Card)
+            function highlightCanva() {
+                const canvaCard = document.getElementById('canva-project-card');
+                if (canvaCard) {
+                    canvaCard.classList.remove('flash-glow');
+                    setTimeout(() => {
+                        canvaCard.classList.add('flash-glow');
+                    }, 100);
+                }
+            }
+
+            // Handles MS Word click specifically (Glows only MS Word Card)
+            function highlightWord() {
+                const wordCard = document.getElementById('word-project-card');
+                if (wordCard) {
+                    wordCard.classList.remove('flash-glow');
+                    setTimeout(() => {
+                        wordCard.classList.add('flash-glow');
+                    }, 100);
+                }
+            }
+
+            // Handles MS Excel click specifically (Glows only MS Excel Card)
+            function highlightExcel() {
+                const excelCard = document.getElementById('excel-project-card');
+                if (excelCard) {
+                    excelCard.classList.remove('flash-glow');
+                    setTimeout(() => {
+                        excelCard.classList.add('flash-glow');
+                    }, 100);
+                }
+            }
+            function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+                }
+            }
+
+            // Close modal cleanly
+            function closeModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto'; // Re-enable background scrolling
+                }
+            }
+
+            // Close when clicking outside the content window
+            function closeModalOnOuterClick(event, modalId) {
+                if (event.target === event.currentTarget) {
+                    closeModal(modalId);
+                }
+            }
+             document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('header nav ul li a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                        history.pushState(null, null, `#${targetId}`);
+                    }
+                });
+            });
+        });
+        </script>
 
 </body>
 </html>
